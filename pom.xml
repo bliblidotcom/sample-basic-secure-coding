@@ -17,8 +17,8 @@
     <url />
   </organization>
   <scm>
-    <connection>scm:git:ssh://git@stash.gdn-app.com:7999/sandbox/not-secure-do-not-use.git</connection>
-    <developerConnection>scm:git:ssh://git@stash.gdn-app.com:7999/sandbox/not-secure-do-not-use.git</developerConnection>
+    <connection>scm:git:ssh://git@github.com:bliblidotcom/sample-basic-secure-coding.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:bliblidotcom/sample-basic-secure-coding.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <properties>
