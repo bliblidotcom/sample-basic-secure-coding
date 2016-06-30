@@ -33,7 +33,7 @@ public class IndexController {
   @Transactional(readOnly = true)
   public ModelAndView findOneNoteById(@RequestParam String noteId) {
     List<Note> notes = this.noteRepository.findOneById(noteId);
-    ModelAndView modelAndView = new ModelAndView("index");
+    ModelAndView modelAndView = new ModelAndView("find-all");
     modelAndView.addObject("notes", notes);
     return modelAndView;
   }
@@ -42,7 +42,7 @@ public class IndexController {
   @Transactional(readOnly = true)
   public ModelAndView findOneNoteByTitle(@RequestParam String noteTitle) {
     List<Note> notes = this.noteRepository.findOneByTitle(noteTitle);
-    ModelAndView modelAndView = new ModelAndView("index");
+    ModelAndView modelAndView = new ModelAndView("find-all");
     modelAndView.addObject("notes", notes);
     return modelAndView;
   }
@@ -50,6 +50,13 @@ public class IndexController {
   @RequestMapping("/")
   @Transactional(readOnly = true)
   public ModelAndView index(HttpSession session) {
+    ModelAndView modelAndView = new ModelAndView("find-by");
+    return modelAndView;
+  }
+
+  @RequestMapping("/findAll")
+  @Transactional(readOnly = true)
+  public ModelAndView findAll(HttpSession session) {
     List<Note> notes = this.noteRepository.findAll();
     ModelAndView modelAndView = new ModelAndView("find-all");
     modelAndView.addObject("notes", notes);
