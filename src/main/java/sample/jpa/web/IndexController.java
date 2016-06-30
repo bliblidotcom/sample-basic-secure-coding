@@ -63,22 +63,4 @@ public class IndexController {
     return modelAndView;
   }
 
-  @RequestMapping("/sessionApi")
-  @Transactional(readOnly = true)
-  public ModelAndView session(HttpSession session, @RequestParam String mySessionVal) {
-    Object mySessionValFromSession = session.getAttribute("mySessionVal");
-    System.out.println(mySessionValFromSession);
-    if (mySessionValFromSession == null) {
-      session.setAttribute("mySessionVal", mySessionVal);
-      System.out.println("my session data still null, will set it to: " + mySessionVal
-          + ", sess id:" + session.getId());
-    } else {
-      System.out
-          .println("my session data :" + mySessionValFromSession + ", sess id:" + session.getId());
-    }
-    ModelAndView modelAndView = new ModelAndView("session");
-    modelAndView.addObject("mySessionVal", mySessionValFromSession);
-    return modelAndView;
-  }
-
 }
