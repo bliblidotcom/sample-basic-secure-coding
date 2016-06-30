@@ -26,19 +26,19 @@ class JpaNoteRepository implements NoteRepository {
 
   @Override
   public List<Note> findAll() {
-    return this.entityManager.createQuery("SELECT n FROM Note n", Note.class).getResultList();
+    return this.entityManager.createNativeQuery("SELECT id, title, body FROM note").getResultList();
   }
 
   @Override
   public List<Note> findOneByTitle(String title) {
-    String sqlString = "SELECT * FROM note n where n.title = '" + title + "'";
+    String sqlString = "SELECT id, title, body FROM note n where n.title = '" + title + "'";
     System.out.println(sqlString);
     return this.entityManager.createNativeQuery(sqlString).getResultList();
   }
 
   @Override
   public List<Note> findOneById(String id) {
-    String sqlString = "SELECT * FROM note n where n.id = " + id;
+    String sqlString = "SELECT id, title, body FROM note n where n.id = " + id;
     System.out.println(sqlString);
     return this.entityManager.createNativeQuery(sqlString).getResultList();
   }

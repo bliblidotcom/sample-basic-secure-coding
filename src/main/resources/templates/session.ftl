@@ -5,7 +5,7 @@
 <body>
 
 <p>
-${mySessionVal}
+secret data : ${mySessionVal}
 </p>
 
 </body>
