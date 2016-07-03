@@ -20,4 +20,4 @@ then access it at:
 ### additional resources
 
 - cheat-sheet.txt - sample how to
-- secure-coding-1.pptx - related presentation deck
+- related presentation : http://www.slideshare.net/AndiRustandiDjunaedi/tech-it-easy-x-devtalk-secure-your-coding-with-owasp
