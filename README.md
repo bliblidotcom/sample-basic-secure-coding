@@ -16,3 +16,8 @@ then access it at:
 ### sample api that can be exploited
 
     http://localhost:8080/findOneNoteById?noteId=1
+
+### additional resources
+
+- cheat-sheet.txt - sample how to
+- secure-coding-1.pptx - related presentation deck
